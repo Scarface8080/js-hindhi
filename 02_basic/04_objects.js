@@ -122,7 +122,7 @@ const {courseinformation : instructor} = course   // we can also rename the prop
 
 // sometime api also gives data in arry of object
 // [
-//     {},
+//     {}, 
 //     {},
 //     {},
 // ]
