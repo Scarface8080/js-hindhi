@@ -6,9 +6,9 @@
 
 # solution code
 
-## project 1
+## project 1 Color Changer
 
-``` jvascript
+``` javascript
 
     console.log("hamza")
     
@@ -39,6 +39,54 @@
         }
     });
     });
+
+
+```
+
+
+## Project 2 Solution 
+
+``` javascript
+
+const form = document.querySelector('form');
+
+// this usecase will give you empty vlue
+// const  height = parseInt(document.querySelector('#height').Value)
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const results = document.querySelector('#results');
+
+  if (height === '' || height < 0 || isNaN(height)) {
+    // console.log('here');
+    results.innerHTML = `Please give a valid height ${height} `;
+  } else if (weight === '' || weight < 0 || isNaN(weight)) {
+    // console.log('here');
+    results.innerHTML = `Please give a valid weight ${weight} `;
+  } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    // Sho the result
+    // results.innerHTML = `<span>${bmi}  </span>`;
+
+    let underWeight = 18.6;
+    let overWeight = 24.9;
+
+    // Check if underweight
+    if (bmi < underWeight) {
+      results.innerHTML = `${bmi} - Underweight`;
+    } // Check if normal weight
+    else if (bmi >= underWeight && bmi <= overWeight) {
+      results.innerHTML = `${bmi} - Normal weight`;
+    } // Check if overweight
+    else if (bmi >= overWeight) {
+      results.innerHTML = `${bmi} - Overweight`;
+    }
+  }
+});
+
 
 
 ```
