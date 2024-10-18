@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>chai or code</h1>
+    <button id="stop">stop</button>
+
+
+    <script>
+
+        //  we can assign function to a variable and pss to set timeout method 
+        // const hamza = function (){
+        //     console.log("Hamza");
+            
+        // }
+
+        // setTimeout(hamza, 2000)
+
+        const changeText = function (){
+            document.querySelector('h1').innerHTML = "Best JS series"
+
+        }
+
+        const changeMe = setTimeout(changeText, 2000)
+
+
+        document.querySelector('#stop').addEventListener('click', function(){
+            clearTimeout(changeMe)
+            console.log("STOPED");
+            
+        })
+        
+        // clearTimeout(changeMe)
+
+        // this is the basic way 
+        // setTimeout(function (){
+        //     console.log("Hamza");
+            
+        // }, 2000)
+    </script>
+    
+</body>
+</html>

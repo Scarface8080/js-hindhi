@@ -217,3 +217,48 @@ function newGame() {
 
 
 ```
+
+## async project 1 solution 
+
+``` javascript 
+
+// generate  random color
+
+const randomColor = function () {
+  const hex = '01234567890ABCDEF';
+  let color = '#';
+
+  for (let i = 0; i < 6; i++) {
+    color += Math.floor(Math.random() * 10);
+  }
+  return color;
+};
+
+// console.log(randomColor());
+
+let intervalId;
+
+const startChangingColor = function () {
+  // console.log('here');
+
+  if (!intervalId) {
+    intervalId = setInterval(changeBgColor, 1000);
+  }
+
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+
+
+```
