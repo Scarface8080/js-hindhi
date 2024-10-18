@@ -218,7 +218,7 @@ function newGame() {
 
 ```
 
-## async project 1 solution 
+## async project 1 change background color auto  solution 
 
 ``` javascript 
 
@@ -258,6 +258,40 @@ const stopChangingColor = function () {
 document.querySelector('#start').addEventListener('click', startChangingColor);
 
 document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+
+
+```
+
+
+## async project 5 Keyboard check soloution
+
+``` javascript
+
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+
+  <div class="color">
+      <table>
+      <tr>
+        <th>Key</th>
+        <th>KeyCode</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>${e.key === ' ' ? 'space' : e.key}</td>
+        <td>${e.keyCode}</td>
+        <td>${e.code}</td>
+      </tr>
+    
+    </table>4
+  </div>
+
+  
+  `;
+});
 
 
 
